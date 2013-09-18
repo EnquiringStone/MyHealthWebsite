@@ -1,0 +1,15 @@
+web/bundles/*
+.project
+.buildpath
+.settings
+LICENSE.md
+.idea
+*.log
+.htaccess
+/app/config/parameters.yml
+/app/cache/*
+/app/logs/*
+/web/.htaccess
+/vendor/*
+temp
+/web/images/*

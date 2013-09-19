@@ -1,0 +1,3 @@
+index:
+    prefix: /
+    resource: "@MyHealthSiteBundle/Resources/config/routing.xml"

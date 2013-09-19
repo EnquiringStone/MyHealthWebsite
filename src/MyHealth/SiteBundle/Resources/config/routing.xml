@@ -7,4 +7,16 @@
 	<route id="MyHealthSiteBundle_index" pattern="/">
 		<default key="_controller">MyHealthSiteBundle:Index:index</default>
 	</route>
+
+	<!-- Security -->
+	<route id="MyHealthSiteBundle_profile_login" pattern="/profile/login">
+		<default key="_controller">MyHealthSiteBundle:Security:login</default>
+	</route>
+	<route id="MyHealthSiteBundle_profile_login_check" pattern="/profile/login_check" />
+	<route id="MyHealthSiteBundle_profile_logout" pattern="/profile/logout" />
+
+	<!-- Profile -->
+	<route id="MyHealthSiteBundle_profile_index" pattern="/profile">
+		<default key="_controller">MyHealthSiteBundle:Profile:index</default>
+	</route>
 </routes>

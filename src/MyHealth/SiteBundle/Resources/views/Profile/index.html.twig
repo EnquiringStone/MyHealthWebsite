@@ -1,5 +1,15 @@
 {% extends 'MyHealthSiteBundle::base.html.twig' %}
-{% block title %}{% trans %}Profiel{% endtrans %}{% endblock %}
+{% block title %}{% trans %}Profile{% endtrans %}{% endblock %}
 {% block content %}
-	Profile
+	<h1>{% trans %}Welcome{% endtrans %} {{ app.user.username }}</h1>
+	<p>
+		{% trans %}This is the profile homepage{% endtrans %}.
+		{% trans %}You can see your personal info below{% endtrans %}.
+		{% trans %}Click{% endtrans %} <a href="{{ path('MyHealthSiteBundle_profile_edit') }}">{% trans %}here{% endtrans %}</a>
+		{% trans %}to edit your profile{% endtrans %}.
+	</p>
+	{% trans %}Username{% endtrans %}	: {{ app.user.username }} <br />
+	{% trans %}Email{% endtrans %}		: {{ app.user.email }} <br />
+	{% trans %}Last login{% endtrans %}	: {{ app.user.getLastLogin|date('d-M H:m') }}
+
 {% endblock %}

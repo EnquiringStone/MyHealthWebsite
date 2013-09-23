@@ -1,13 +1,13 @@
 {% extends 'MyHealthSiteBundle::base.html.twig' %}
-{% block title %}{% trans %}Inloggen{% endtrans %}{% endblock %}
+{% block title %}{% trans %}Login{% endtrans %}{% endblock %}
 {% block content %}
 	<form class="form-horizontal" action="{{ path('MyHealthSiteBundle_profile_login_check') }}" method="POST">
 		<fieldset>
-			{% if error %}<div class="alert alert-error">{% trans %}De gebruikersnaam en/of wachtwoord is incorrect of het account moet nog worden geactiveerd{% endtrans %}.</div>{% endif %}
-			{{ form_widget(login_form, {'form_type': 'horizontal'}) }}
+			{% if error %}<div class="alert alert-error">{% trans %}The username and or password is incorrect{% endtrans %}.</div>{% endif %}
+			{{ form_widget(login_form) }}
 			<div class="control-group">
 				<div class="controls">
-					<button type="submit" class="btn">{% trans %}Inloggen{% endtrans %}</button>
+					<button type="submit" class="btn">{% trans %}Login{% endtrans %}</button>
 				</div>
 			</div>
 		</fieldset>

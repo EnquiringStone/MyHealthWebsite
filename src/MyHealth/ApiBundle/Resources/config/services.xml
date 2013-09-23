@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+		   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		   xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+	<parameters>
+		<parameter key="my.health.api.listener.class">MyHealth\ApiBundle\EventListener\ApiListener</parameter>
+		<parameter key="my.health.exception.listener.class">MyHealth\ApiBundle\EventListener\MyHealthExceptionListener</parameter>
+		<parameter key="my.health.user.service.class">MyHealth\ApiBundle\Service\UserService</parameter>
+	</parameters>
+	<services>
+		<service id="my.health.api.listener" class="%my.health.api.listener.class%">
+			<tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" />
+			<argument type="service" id="my.health.user.service" />
+		</service>
+
+		<service id="my.health.exception.listener" class="%my.health.exception.listener.class%">
+			<tag name="kernel.event_listener" event="kernel.exception" method="onKernelException" />
+		</service>
+
+		<service id="my.health.user.service" class="%my.health.user.service.class%">
+			<argument type="service" id="fos_user.user_manager" />
+			<argument type="service" id="security.encoder_factory" />
+			<argument type="service" id="doctrine.orm.entity_manager" />
+			<argument>%user.login_attempts%</argument>
+		</service>
+	</services>
+</container>

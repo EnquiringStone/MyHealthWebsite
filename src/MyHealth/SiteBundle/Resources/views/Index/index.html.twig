@@ -1,4 +1,6 @@
 {% extends 'MyHealthSiteBundle::base.html.twig' %}
-{% block title %}{% trans %}Index{% endtrans %}{% endblock %}
+{% block title %}{% trans %}Home{% endtrans %}{% endblock %}
 {% block content %}
+	<h1>{% trans %}Welcome{% endtrans %}</h1>
+	<p>{% trans %}Please login with your credentials {% endtrans %} <a href="{{ path('MyHealthSiteBundle_profile_login') }}">{% trans %}here{% endtrans %}</a></p>
 {% endblock %}

@@ -19,4 +19,16 @@
 	<route id="MyHealthSiteBundle_profile_index" pattern="/profile">
 		<default key="_controller">MyHealthSiteBundle:Profile:index</default>
 	</route>
+	<route id="MyHealthSiteBundle_profile_edit" pattern="/profile/edit">
+		<default key="_controller">MyHealthSiteBundle:Profile:edit</default>
+	</route>
+
+	<!-- Bills -->
+	<route id="MyHealthSiteBundle_profile_bills" pattern="/profile/bills">
+		<default key="_controller">MyHealthSiteBundle:Profile:bill</default>
+	</route>
+	<route id="MyHealthSiteBundle_profile_order_line" pattern="/profile/bills/line/{id}">
+		<default key="_controller">MyHealthSiteBundle:Profile:orderLine</default>
+	</route>
+
 </routes>

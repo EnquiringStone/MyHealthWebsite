@@ -2,10 +2,17 @@
 <container xmlns="http://symfony.com/schema/dic/services"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
-	<!--<parameters>-->
-
-	<!--</parameters>-->
-	<!--<services>-->
-
-	<!--</services>-->
+	<parameters>
+		<parameter key="my.health.profile.service.class">MyHealth\SiteBundle\Service\ProfileService</parameter>
+		<parameter key="my.health.locale.listener.class">MyHealth\SiteBundle\EventListener\LocaleListener</parameter>
+	</parameters>
+	<services>
+		<service id="my.health.profile.service" class="%my.health.profile.service.class%">
+			<argument type="service" id="fos_user.user_manager" />
+		</service>
+		<service id="my.health.locale.listener" class="%my.health.locale.listener.class%">
+			<tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" />
+			<argument>%kernel.cache_dir%</argument>
+		</service>
+	</services>
 </container>

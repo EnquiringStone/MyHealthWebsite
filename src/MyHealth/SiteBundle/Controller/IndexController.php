@@ -13,6 +13,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class IndexController extends Controller {
 
 	public function indexAction() {
+		if($this->getRequest()->getMethod() == 'POST') {
+			$data = $this->getRequest()->request->all();
+			$this->get('my.health.locale.listener')->setLocale($this->getRequest(), $data['locale']);
+			return $this->redirect($this->generateUrl('MyHealthSiteBundle_index'));
+		}
 		return $this->render('MyHealthSiteBundle:Index:index.html.twig');
 	}
 }

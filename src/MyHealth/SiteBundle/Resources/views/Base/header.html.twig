@@ -1,3 +1,20 @@
 <div id="header">
-	De header
+	<ul class="navigation">
+		<li><a href="{{ path('MyHealthSiteBundle_index') }}">{% trans %}Home{% endtrans %}</a> |</li>
+		{% if is_granted('ROLE_USER') %}
+			<li> <a href="{{ path('MyHealthSiteBundle_profile_index') }}">{{ app.user.username }}</a> |</li>
+			<li> <a href="{{ path('MyHealthSiteBundle_profile_bills') }}">{% trans %}Bills{% endtrans %}</a> |</li>
+			<li> <a href="{{ path('MyHealthSiteBundle_profile_edit') }}">{% trans %}Edit{% endtrans %}</a> |</li>
+			<li> <a href="{{ path('MyHealthSiteBundle_profile_logout') }}">{% trans %}Logout{% endtrans %}</a></li>
+		{% else %}
+			<li> <a href="{{ path('MyHealthSiteBundle_profile_login') }}">{% trans %}Login{% endtrans %}</a></li>
+		{% endif %}
+	</ul>
+	<form class="form-horizontal" action="{{ path('MyHealthSiteBundle_index') }}" method="POST">
+		<select class="language-picker" name="locale" onchange="form.submit()">
+			<option value="en" {% if app.request.locale == 'en' %}selected="selected{% endif %}">{% trans %}English{% endtrans %}</option>
+			<option value="nl" {% if app.request.locale == 'nl' %}selected="selected{% endif %}">{% trans %}Dutch{% endtrans %}</option>
+		</select>
+	</form>
+	<div style="clear: both;"></div>
 </div>

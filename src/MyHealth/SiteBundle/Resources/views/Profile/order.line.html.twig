@@ -1,0 +1,28 @@
+{% extends 'MyHealthSiteBundle::base.html.twig' %}
+{% block title %}{% trans %}Orderline{% endtrans %}{% endblock %}
+{% block content %}
+	<h1>{% trans %}Orderline{% endtrans %}</h1>
+	<table class="bill-line">
+		<thead>
+			<tr>
+				<th><b>{% trans %}Id{% endtrans %}</b></th>
+				<th><b>{% trans %}Code{% endtrans %}</b></th>
+				<th><b>{% trans %}Price{% endtrans %}</b></th>
+				<th><b>{% trans %}Has insurance{% endtrans %}</b></th>
+				<th><b>{% trans %}Status{% endtrans %}</b></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{{ line.id }}</td>
+				<td>{{ line.code }}</td>
+				<td>€ {{ line.price }}</td>
+				<td>{% if line.insured %}{% trans %}Yes{% endtrans %}{% else %}{% trans %}No{% endtrans %}{% endif %}</td>
+				<td>{{ line.status|trans }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h2>{% trans %}Description{% endtrans %}</h2>
+	<p>{{ line.description|trans }}</p>
+{% endblock %}

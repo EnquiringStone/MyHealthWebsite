@@ -1,0 +1,15 @@
+{% extends 'MyHealthSiteBundle::base.html.twig' %}
+{% block title %}{% trans %}Edit Profile{% endtrans %}{% endblock %}
+{% block content %}
+	<h1>{% trans %}Edit profile{% endtrans %}</h1>
+	<form class="form-horizontal" action="{{ path('MyHealthSiteBundle_profile_edit') }}" method="POST">
+		<fieldset>
+			{{ form_widget(edit_profile_form) }}
+			<div class="control-group">
+				<div class="controls">
+					<button type="submit" class="btn">{% trans %}Edit{% endtrans %}</button>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+{% endblock %}

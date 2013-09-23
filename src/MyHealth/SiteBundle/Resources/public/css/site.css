@@ -1,0 +1,66 @@
+#main-container {
+	position: absolute;
+	margin-left: 50px;
+	margin-top: 15px;
+	font-size: 14px;
+}
+
+#main-container .bill {
+	display: block;
+}
+
+#main-container .bill-line {
+	display: inline-block;
+	border: 0;
+	width: 100%;
+}
+
+#main-container p {
+	margin-bottom: 10px;
+}
+
+#header {
+	margin-left: -35px;
+}
+
+#header .language-picker {
+	float: right;
+}
+
+#header .navigation {
+	display: block;
+	list-style-type: none;
+	float: left;
+}
+#header .navigation li {
+	display: inline-block;
+}
+
+#footer {
+	font-size: 10px;
+}
+
+h1 {
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+h2 {
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+
+tr {
+	margin-top: 5px;
+}
+
+td {
+	margin-left: 10px;
+	text-align: left;
+}
+
+th {
+	margin-bottom: 10px;
+	font-size: 15px;
+	text-align: left;
+}

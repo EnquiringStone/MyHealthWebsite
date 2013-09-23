@@ -19,6 +19,7 @@ class AppKernel extends Kernel
 			new FOS\UserBundle\FOSUserBundle(),
 			new MyHealth\SiteBundle\MyHealthSiteBundle(),
 			new MyHealth\UserBundle\MyHealthUserBundle(),
+			new MyHealth\ApiBundle\MyHealthApiBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

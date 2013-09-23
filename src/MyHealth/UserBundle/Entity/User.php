@@ -26,6 +26,16 @@ class User extends BaseUser {
 	protected $id;
 
 	/**
+	 * @ORM\Column(type="integer", length=11)
+	 */
+	protected $attempt;
+
+	/**
+	 * @ORM\Column(type="string", length=255, nullable=true)
+	 */
+	protected $login_token;
+
+	/**
 	 * @ORM\OneToMany(targetEntity="MyHealth\SiteBundle\Entity\Bill", mappedBy="user")
 	 */
 	private $bills;
@@ -151,5 +161,51 @@ class User extends BaseUser {
     public function getUrineTests()
     {
         return $this->urine_tests;
+    }
+
+    /**
+     * Set attempt
+     *
+     * @param integer $attempt
+     * @return User
+     */
+    public function setAttempt($attempt)
+    {
+        $this->attempt = $attempt;
+    
+        return $this;
+    }
+
+    /**
+     * Get attempt
+     *
+     * @return integer 
+     */
+    public function getAttempt()
+    {
+        return $this->attempt;
+    }
+
+    /**
+     * Set login_token
+     *
+     * @param string $loginToken
+     * @return User
+     */
+    public function setLoginToken($loginToken)
+    {
+        $this->login_token = $loginToken;
+    
+        return $this;
+    }
+
+    /**
+     * Get login_token
+     *
+     * @return string 
+     */
+    public function getLoginToken()
+    {
+        return $this->login_token;
     }
 }

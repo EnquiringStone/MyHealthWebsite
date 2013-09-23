@@ -2,8 +2,8 @@
 /**
  * Created by JetBrains PhpStorm.
  * User: EnquiringStone
- * Date: 19-9-13
- * Time: 11:45
+ * Date: 23-9-13
+ * Time: 16:30
  * To change this template use File | Settings | File Templates.
  */
 namespace MyHealth\SiteBundle\Form\Type;
@@ -13,8 +13,7 @@ use Symfony\Component\Translation\Translator,
 	Symfony\Component\Form\FormBuilderInterface,
 	Symfony\Component\Security\Core\SecurityContext;
 
-class LoginFormType extends AbstractType {
-
+class EditProfileFormType extends AbstractType {
 	protected $trans;
 
 	public function __construct(Translator $trans) {
@@ -26,12 +25,13 @@ class LoginFormType extends AbstractType {
 	 * @param array $options
 	 */
 	public function buildForm(FormBuilderInterface $builder, array $options) {
-		$builder->add('username', 'text', array('label' => $this->trans->trans('Username')));
-		$builder->add('password', 'password', array('label' => $this->trans->trans('Password')));
-		$builder->add('remember_me', 'checkbox', array('label' => $this->trans->trans('Keep me logged in'), 'required' => false));
+		$builder->add('password', 'password', array('label' => $this->trans->trans('Password'), 'required' => false));
+		$builder->add('confirm_password', 'password', array('label' => $this->trans->trans('Confirm password'), 'required' => false));
+		$builder->add('email', 'email', array('label' => $this->trans->trans('Email'), 'required' => false));
+		$builder->add('confirm_email', 'email', array('label' => $this->trans->trans('Confirm Email'), 'required' => false));
 	}
 
 	public function getName() {
-		return 'login_form';
+		return 'edit_profile_form';
 	}
 }

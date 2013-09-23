@@ -1,0 +1,28 @@
+{% extends 'MyHealthSiteBundle::base.html.twig' %}
+{% block title %}{% trans %}Bills{% endtrans %}{% endblock %}
+{% block content %}
+	<h1>{% trans %}Bills{% endtrans %}</h1>
+	<div class="bill">
+		{% for bill in bills %}
+			<h2>{% if bill.getHealthCareEntity %}{{ bill.getHealthCareEntity }}{% else %}{% trans %}Unknown{% endtrans %}{% endif %}</h2>
+			<table class="bill-line">
+				<thead>
+					<tr>
+						<th>{% trans %}Code{% endtrans %}</th>
+						<th>{% trans %}Price{% endtrans %}</th>
+						<th>{% trans %}Status{% endtrans %}</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for line in bill.getOrderLines %}
+						<tr>
+							<td><a href="{{ path('MyHealthSiteBundle_profile_order_line', {id:line.id}) }}">{{ line.code }}</a></td>
+							<td>€ {{ line.price }}</td>
+							<td>{{ line.status|trans }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		{% endfor %}
+	</div>
+{% endblock %}

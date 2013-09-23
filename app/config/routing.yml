@@ -1,3 +1,6 @@
 index:
     prefix: /
     resource: "@MyHealthSiteBundle/Resources/config/routing.xml"
+api:
+    prefix: /api
+    resource: "@MyHealthApiBundle/Resources/config/routing.xml"

@@ -64,7 +64,12 @@ class UserService implements ApiInterface{
 					$this->manager->updateUser($user);
 					return array('login_token' => $token);
 				}
-				$this->setAttempt($user->getAttempt() + 1);
+				$user->setAttempt($user->getAttempt() + 1);
+				if($user->getAttempt() >= $this->loginAttempts) {
+					$user->setEnabled(false);
+					$user->setAttempt(0);
+				}
+				$this->manager->updateUser($user);
 				throw new \Exception('The password is incorrect');
 			}
 			throw new \Exception('The profile has been blocked');

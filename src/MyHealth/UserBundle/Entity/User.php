@@ -28,7 +28,7 @@ class User extends BaseUser {
 	/**
 	 * @ORM\Column(type="integer", length=11)
 	 */
-	protected $attempt;
+	protected $attempt = 0;
 
 	/**
 	 * @ORM\Column(type="string", length=255, nullable=true)

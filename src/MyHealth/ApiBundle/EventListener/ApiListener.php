@@ -42,7 +42,7 @@ class ApiListener {
 				$class = null;
 				if(array_key_exists('name', $params)) {
 					$class = (array_key_exists($params['name'], $this->classes)) ? $this->classes[$params['name']] : null;
-					if($class === null) throw new \Exception('De naam die is meegegeven komt niet overeen');
+					if($class === null) throw new \Exception("The name doesn't match any know names");
 					if(method_exists($class, $params['method'])) {
 						$data = call_user_func(array($class, $params['method']), $this->getArguments($params));
 						$data = is_array($data) ? $data : array($data);
@@ -50,12 +50,12 @@ class ApiListener {
 						$event->setResponse($this->createResponse($data));
 						return $event->getResponse();
 					}
-					throw new \Exception('De methode bestaat niet');
+					throw new \Exception("The method doesn't exist");
 				}
-				throw new \Exception('De naam parameter is niet meegegeven');
+				throw new \Exception("The name has not been sent with the request");
 
 			}
-			throw new \Exception('Er is geen methode parameter meegegeven');
+			throw new \Exception('The method has not been sent with the request');
 		}
 	}
 

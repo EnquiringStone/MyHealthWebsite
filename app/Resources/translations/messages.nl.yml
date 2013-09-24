@@ -47,3 +47,7 @@ ECG Waves: ECG Golven
 The password is incorrect: Het wachtwoord is onjuist
 The profile has been blocked: Het profiel is geblokkeerd
 The user doesn't exist: De gebruiker bestaat niet
+The method has not been sent with the request: De methode is niet met het request verzonden
+The name has not been sent with the request: De naam is niet met het request verzonden
+The method doesn't exist: De methode bestaat niet
+The name doesn't match any know names: De naam komt niet overeen

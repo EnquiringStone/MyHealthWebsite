@@ -1,5 +1,9 @@
+body{
+	min-width: 550px;
+	width: 550px;
+}
+
 #main-container {
-	position: absolute;
 	margin-left: 50px;
 	margin-top: 15px;
 	font-size: 14px;
@@ -25,6 +29,7 @@
 
 #header .language-picker {
 	float: right;
+	margin-top: 15px;
 }
 
 #header .navigation {

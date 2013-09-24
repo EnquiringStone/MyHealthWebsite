@@ -15,6 +15,7 @@
 
 		<service id="my.health.exception.listener" class="%my.health.exception.listener.class%">
 			<tag name="kernel.event_listener" event="kernel.exception" method="onKernelException" />
+			<argument type="service" id="translator" />
 		</service>
 
 		<service id="my.health.user.service" class="%my.health.user.service.class%">

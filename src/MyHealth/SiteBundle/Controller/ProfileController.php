@@ -10,6 +10,7 @@ namespace MyHealth\SiteBundle\Controller;
 
 use MyHealth\SiteBundle\Form\Type\EditProfileFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\File\Exception\AccessDeniedException;
 
 class ProfileController extends Controller {
 	public function indexAction() {
@@ -25,6 +26,7 @@ class ProfileController extends Controller {
 
 	public function orderLineAction($id) {
 		$billLine = $this->getDoctrine()->getRepository('MyHealthSiteBundle:OrderLine')->find($id);
+		if($this->getUser()->getId() != $billLine->getBill()->getUser()->getId()) throw new AccessDeniedException('No permission for these order lines');
 		return $this->render('MyHealthSiteBundle:Profile:order.line.html.twig', array(
 			'line' => $billLine
 		));

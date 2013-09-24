@@ -1,1 +1,49 @@
+#SITE
 Home: Thuis
+Bills: Rekeningnummers
+Edit: Bewerk
+Logout: Uitloggen
+Login: Inloggen
+English: Engels
+Dutch: Nederlands
+Welcome: Welkom
+Please login with your credentials: Graag inloggen met uw inloggegevens
+here: hier
+Code: Code
+Price: Prijs
+Status: Status
+Edit Profile: Bewerk Profiel
+Edit profile: Bewerk profiel
+Profile: Profiel
+This is the profile homepage: Dit is de profielpagina van de website
+You can see your personal info below: Hieronder kunt u uw persoonlijke informatie inzien
+Click: Klik
+to edit your profile: om uw profiel te bewerken
+Username: Gebruikersnaam
+Email: Email
+Last login: Voor het laatst ingelogt
+Orderline: Orderlijn
+Id: Id
+Has insurance: Is verzekerd
+Description: Omschrijving
+Yes: Ja
+No: Nee
+The username and or password is incorrect: De gebruikersnaam en of het wachtwoord is niet correct
+Password: Wachtwoord
+Confirm password: Bevestig wachtwoord
+Confirm email: Bevestig email
+Keep me logged in: Hou mij ingelogt
+All rights reserved: Alle rechten behouden
+Please choose one of the above links: Graag een keuze maken uit de bovenstaande links
+Unpaid: Onbetaald
+Paid: Betaald
+Pay for itself: Zelf betalen
+F: V
+Blood Pressure: Bloeddruk
+Pulse: Hartslag
+ECG Waves: ECG Golven
+
+#API
+The password is incorrect: Het wachtwoord is onjuist
+The profile has been blocked: Het profiel is geblokkeerd
+The user doesn't exist: De gebruiker bestaat niet

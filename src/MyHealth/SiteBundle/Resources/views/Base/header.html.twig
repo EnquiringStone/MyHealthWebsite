@@ -4,7 +4,7 @@
 		{% if is_granted('ROLE_USER') %}
 			<li> <a href="{{ path('MyHealthSiteBundle_profile_index') }}">{{ app.user.username }}</a> |</li>
 			<li> <a href="{{ path('MyHealthSiteBundle_profile_bills') }}">{% trans %}Bills{% endtrans %}</a> |</li>
-			<li> <a href="{{ path('MyHealthSiteBundle_profile_edit') }}">{% trans %}Edit{% endtrans %}</a> |</li>
+			<li> <a href="{{ path('MyHealthSiteBundle_profile_edit') }}">{% trans %}Edit profile{% endtrans %}</a> |</li>
 			<li> <a href="{{ path('MyHealthSiteBundle_profile_logout') }}">{% trans %}Logout{% endtrans %}</a></li>
 		{% else %}
 			<li> <a href="{{ path('MyHealthSiteBundle_profile_login') }}">{% trans %}Login{% endtrans %}</a></li>

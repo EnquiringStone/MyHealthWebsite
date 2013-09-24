@@ -2,5 +2,9 @@
 {% block title %}{% trans %}Home{% endtrans %}{% endblock %}
 {% block content %}
 	<h1>{% trans %}Welcome{% endtrans %}</h1>
-	<p>{% trans %}Please login with your credentials {% endtrans %} <a href="{{ path('MyHealthSiteBundle_profile_login') }}">{% trans %}here{% endtrans %}</a></p>
+	{% if is_granted('ROLE_USER') %}
+		<p>{% trans %}Please choose one of the above links{% endtrans %}</p>
+	{% else %}
+		<p>{% trans %}Please login with your credentials {% endtrans %} <a href="{{ path('MyHealthSiteBundle_profile_login') }}">{% trans %}here{% endtrans %}</a></p>
+	{% endif %}
 {% endblock %}

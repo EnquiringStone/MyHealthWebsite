@@ -6,10 +6,12 @@
 		<parameter key="my.health.api.listener.class">MyHealth\ApiBundle\EventListener\ApiListener</parameter>
 		<parameter key="my.health.exception.listener.class">MyHealth\ApiBundle\EventListener\MyHealthExceptionListener</parameter>
 		<parameter key="my.health.user.service.class">MyHealth\ApiBundle\Service\UserService</parameter>
+		<parameter key="my.health.measurement.service.class">MyHealth\ApiBundle\Service\MeasurementService</parameter>
 	</parameters>
 	<services>
 		<service id="my.health.api.listener" class="%my.health.api.listener.class%">
 			<tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" />
+			<argument type="service" id="my.health.bill.service" />
 			<argument type="service" id="my.health.user.service" />
 		</service>
 
@@ -23,6 +25,12 @@
 			<argument type="service" id="security.encoder_factory" />
 			<argument type="service" id="doctrine.orm.entity_manager" />
 			<argument>%user.login_attempts%</argument>
+		</service>
+		
+		<service id="my.health.bill.service" class="%my.health.measurement.service.class%">
+			<argument type="service" id="fos_user.user_manager" />
+			<argument type="service" id="security.encoder_factory" />
+			<argument type="service" id="doctrine.orm.entity_manager" />
 		</service>
 	</services>
 </container>

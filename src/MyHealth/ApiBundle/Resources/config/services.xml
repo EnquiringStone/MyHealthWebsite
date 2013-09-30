@@ -11,7 +11,7 @@
 	<services>
 		<service id="my.health.api.listener" class="%my.health.api.listener.class%">
 			<tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" />
-			<argument type="service" id="my.health.bill.service" />
+			<argument type="service" id="my.health.measurement.service" />
 			<argument type="service" id="my.health.user.service" />
 		</service>
 
@@ -27,9 +27,7 @@
 			<argument>%user.login_attempts%</argument>
 		</service>
 		
-		<service id="my.health.bill.service" class="%my.health.measurement.service.class%">
-			<argument type="service" id="fos_user.user_manager" />
-			<argument type="service" id="security.encoder_factory" />
+		<service id="my.health.measurement.service" class="%my.health.measurement.service.class%">
 			<argument type="service" id="doctrine.orm.entity_manager" />
 		</service>
 	</services>
